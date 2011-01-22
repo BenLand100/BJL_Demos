@@ -1,0 +1,28 @@
+Some of my better java based demonstrations of algorithms I was proud of writing
+are included here. I also host most of the applets on my server, the following 
+are descriptions and links to the contained applets.
+
+http://bland.no-ip.org/files/detect.html Is an edge detection applet. It allows
+you to dynamically manipulate the parameters sent to the edge detection. It's
+a modified Canny based algorithm and provides pretty good results, though not
+highly optimized
+
+http://bland.no-ip.org/files/collider.html A particle collision demo that runs on
+top of my kd-tree for fast collision detection. Allows you to adjust particle
+parameters and contains two sets of particles.
+
+http://bland.no-ip.org/files/collidergame.html A simple game. Use arrow keys to
+avoid the smaller balls for as long as possible!
+
+http://bland.no-ip.org/files/nnsearch.html Demonstrates the high efficiency of 
+the kd-tree implementation by doing a nearest neighbor search on a large set of
+points. Provides debug information and lets you adjust the number of points and
+number to find.
+
+http://bland.no-ip.org/files/rangesearch.html Similar to the nearest neighbor
+search, the range search finds all points in a given radius using the kd-tree
+for extremely high efficiency.
+
+http://bland.no-ip.org/files/flocking.html Extremely interesting 3D simulation 
+of flocking creatures using a kd-tree for nearest neighbor searches. Allows 
+adjustment of flocking parameters, so play around with it!
