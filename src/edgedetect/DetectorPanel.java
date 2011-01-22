@@ -25,6 +25,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
+import java.io.InputStream;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -54,7 +55,7 @@ public class DetectorPanel extends JPanel {
         low = 300;
         high = 500;
         sigma = 0D;
-        loadImage(null);
+        loadImage("");
     }
 
     public Dimension getPreferredSize() {
@@ -326,17 +327,27 @@ public class DetectorPanel extends JPanel {
     }
 
     public void loadImage(String path) {
-        if (path != null) {
+        try {
+            loadImage(new URL(path).openStream());
+        } catch (Exception e) {
+            raw = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
+            canvas = raw;
+        }
+    }
+
+    public void loadImage(InputStream in) {
+        if (in != null) {
             try {
-                URL url = new URL(path);
-                raw = ImageIO.read(url);
+                raw = ImageIO.read(in);
                 runDetection();
             } catch (Exception e) {
                 raw = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
+            canvas = raw;
                 e.printStackTrace();
             }
         } else {
             raw = new BufferedImage(50,50,BufferedImage.TYPE_INT_RGB);
+            canvas = raw;
         }
     }
 

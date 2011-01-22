@@ -89,7 +89,7 @@ public class DetectApplet extends JApplet implements ActionListener, ChangeListe
     public void start() {
         //edge.loadImage("http://img254.imageshack.us/img254/3860/hahajg5.png");
         //edge.loadImage("http://upload.wikimedia.org/wikipedia/commons/2/2e/Valve_gaussian_%282%29.PNG");
-        edge.loadImage("http://upload.wikimedia.org/wikipedia/commons/e/e8/Mao_Zedong_portrait.jpg");
+        edge.loadImage(getClass().getClassLoader().getResourceAsStream("horses.jpg"));
     }
 
     public void stop() {
